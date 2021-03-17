@@ -19,3 +19,7 @@ A data export platform for both synchronous and asynchronous endpoints using GCP
 * Use [Cloud Functions Framework](https://github.com/GoogleCloudPlatform/functions-framework-python)
 * Use [Pipenv](https://realpython.com/pipenv-guide/)
     * Python 3.8
+
+
+## References
+* [Terraform | GCS PubSub Notifications](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_notification)
