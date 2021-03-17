@@ -9,11 +9,23 @@ terraform {
 
 provider "google" {
   project = var.project_id
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  region  = var.region
+  zone    = var.zone
+}
+
+# required for cloud tasks
+resource "google_app_engine_application" "app_engine" {
+  project = var.project_id
+  location_id = var.location_id
 }
 
 resource "google_cloud_tasks_queue" "default_queue" {
-  name     = "cloud-tasks-queue-test"
-  location = "us-central1"
+  # TODO: add unique id to name
+  name     = "cloud-tasks-queue-test2"
+  location = var.region
+
+  # not currently implied
+  depends_on = [
+    google_project_service.cloud_tasks_api
+  ]
 }
