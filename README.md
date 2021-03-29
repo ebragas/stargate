@@ -8,12 +8,14 @@ A data export platform for both synchronous and asynchronous endpoints using GCP
 **Deployment**
 * Terraform 0.14.8
     * Recommend using `tfenv`
+* `gcloud` (installed w/ initialized configuration)
 
 ## Setup
-1. `pipenv shell` (automatically sources `.env`)
-1. `make init` to initialize Terraform
-1. `source .env` with the following variables set
-    * `export TF_VAR_PROJECT_ID=<your gcp project id>`
+1. `$ pipenv shell` (automatically sources `.env`)
+1. `$ gcloud auth application-default login`
+1. `$ make init` to initialize Terraform
+1. `$ source .env` with the following variables set
+    * `export TF_VAR_project_id=<your gcp project id>`
 
 ## Local Deployment Steps
 1. `make plan`
